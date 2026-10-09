@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiffit - Live Weather</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-default">
+    <div class="container">
+        <!-- Header and Search Section -->
+        <header>
+            <h1 class="logo">Jiffit</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Search for a city..." autocomplete="off">
+                <button id="search-btn">
+                    <!-- SVG Search Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <p id="error-message" class="hidden">City not found</p>
+        </header>
+
+        <main>
+            <!-- Loading Indicator -->
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+
+            <!-- Current Weather Widget -->
+            <section id="current-weather-card" class="card hidden">
+                <div class="weather-header">
+                    <h2 id="city-name">--</h2>
+                    <p id="current-date">--</p>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temp-wrap">
+                        <span id="temperature">--</span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="weather-icon-wrap">
+                        <img id="weather-icon" src="" alt="Weather Icon" class="hidden">
+                        <p id="weather-desc">--</p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail">
+                        <span>Humidity</span>
+                        <strong id="humidity">--%</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Wind</span>
+                        <strong id="wind-speed">-- km/h</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Feels Like</span>
+                        <strong id="feels-like">--°C</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast Widget -->
+            <section id="forecast-section" class="hidden">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast items will be injected here by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
